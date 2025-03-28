@@ -1,0 +1,143 @@
+/* Estilos para el contenido principal */
+.main-content {
+    margin-left: 220px; /* Dejar espacio suficiente para la barra de servicios */
+    padding: 20px; /* Espaciado alrededor del contenido */
+}
+
+
+/* Estilos de la barra de servicios */
+.barra-servicios {
+    width: 200px; /* Ajusta el ancho según sea necesario */
+    background-color: #ffffff; /* Fondo blanco */
+    position: fixed; /* Posición fija en el lado izquierdo */
+    height: 100%; /* Altura completa */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px; /* Añade un poco de padding en la parte superior */
+    padding-left: 10px; /* Espacio lateral interno */
+    padding-right: 10px;
+    border-right: 2px solid #d4af37; /* Borde dorado derecho */
+}
+
+.boton-barra {
+    color: #d4af37; /* Color del texto dorado */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    padding: 15px 20px; /* Añade padding */
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s; /* Transición suave para el efecto hover */
+    margin-bottom: 10px; /* Espacio entre botones */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1.1em; /* Tamaño de fuente */
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #d4af37; /* Borde dorado */
+}
+
+.boton-barra:hover {
+    background-color: #f9f2e9; /* Fondo dorado claro al pasar el ratón */
+}
+
+.boton-barra i {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+
+
+/* Estilos de los filtros de citas */
+.filtros-citas {
+    display: flex;
+    justify-content: center; /* Centrar los botones */
+    flex-wrap: wrap; /* Hacer que los botones se ajusten en columnas */
+    margin-bottom: 1rem;
+}
+
+.filtros-citas button {
+    margin: 10px; /* Margen alrededor de los botones */
+    padding: 10px 15px;
+    border: 1px solid #d4af37; /* Borde dorado */
+    background-color: #ffffff; /* Fondo blanco */
+    color: #d4af37; /* Color de texto dorado */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filtros-citas button:hover {
+    background-color: #d4af37; /* Fondo dorado */
+    color: #ffffff; /* Texto blanco */
+}
+
+/* Responsivo: barra en columna para pantallas pequeñas */
+/* Responsivo: barra en columna para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .barra-servicios {
+        width: 100%;
+        height: auto;
+        position: static; /* Hacer que la barra sea estática */
+        display: flex;
+        flex-direction: column; /* Organiza los elementos en columna */
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        border-left: none; /* Eliminar bordes innecesarios */
+        border-right: none;
+        border-bottom: 5px solid #d4af37; /* Borde dorado en la parte inferior */
+        background-color: #f8f8f8; /* Fondo claro para mejorar el contraste */
+    }
+
+    .boton-barra {
+        width: 100%; /* Asegura que los botones ocupen todo el ancho */
+        max-width: 90%; /* Limitar el tamaño máximo para mejor estética */
+        text-align: center;
+        justify-content: center;
+        padding: 12px 15px;
+        margin: 8px 0; /* Espaciado entre botones */
+        background-color: #d4af37; /* Azul para un diseño moderno */
+        color: white;
+        font-weight: bold;
+        border-radius: 8px; /* Esquinas redondeadas */
+        border: none; /* Eliminar bordes adicionales */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Animación suave */
+    }
+
+    .boton-barra:hover {
+        background-color: #d4af37; /* Azul más oscuro al hacer hover */
+        transform: scale(1.05); /* Ligera ampliación al pasar el ratón */
+    }
+
+    .boton-barra i {
+        margin-right: 8px; /* Espacio entre el icono y el texto */
+        font-size: 18px;
+    }
+
+    .main-content {
+        margin: 0 auto; /* Centra el contenido */
+        padding: 15px;
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    .filtros-citas {
+        flex-direction: column; /* Alinear botones en una sola columna */
+        align-items: center; /* Centrar columna */
+    }
+    .filtros-citas button {
+        width: 100%; /* Botones ocupan todo el ancho del contenedor */
+        max-width: 90%; /* Espacio lateral para mejor apariencia */
+        text-align: center;
+        padding: 12px 20px; /* Ajustar el padding */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para realce */
+    }
+
+    .filtros-citas button:hover {
+        background-color: #d4af37;
+        color: #ffffff;
+        transform: scale(1.02); /* Pequeña ampliación al hacer hover */
+    }
+}
+
+
+
+

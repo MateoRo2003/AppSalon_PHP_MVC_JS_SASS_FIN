@@ -1,0 +1,26 @@
+<?php if (!empty($alertas)): ?>
+    <div class="alertas">
+        <?php foreach ($alertas as $alerta): ?>
+            <p class="alerta-error"><?php echo $alerta; ?></p>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+
+<h2>Confirmación de cuenta</h2>
+<p>Estás por crear una cuenta con los siguientes datos:</p>
+<ul>
+    <li>Nombre: <?php echo $nombre; ?></li>
+    <li>Apellido: <?php echo $apellido; ?></li>
+    <li>Email: <?php echo $email; ?></li>
+</ul>
+
+<form action="/crear-cuenta-google" method="POST">
+    <input type="hidden" name="google_id" value="<?php echo $google_id; ?>">
+    <input type="hidden" name="email" value="<?php echo $email; ?>">
+    <input type="hidden" name="nombre" value="<?php echo $nombre; ?>">
+    <input type="hidden" name="apellido" value="<?php echo $apellido; ?>">
+
+    <button type="submit">Confirmar y crear cuenta</button>
+</form>
+
+<a href="/">Cancelar</a>

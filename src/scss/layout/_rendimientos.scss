@@ -1,0 +1,59 @@
+
+.titulo-rendimiento {
+    font-size: 26px;
+    color: #d4af37; /* Dorado */
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tabla-container {
+    overflow-x: auto; /* Permite desplazamiento horizontal en pantallas pequeñas */
+}
+
+.tabla-rendimientos {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: #fff; /* Fondo blanco */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra más refinada */
+}
+
+.tabla-rendimientos th, .tabla-rendimientos td {
+    padding: 15px;
+    border: 1px solid #d4af37; /* Bordes dorados */
+    text-align: center;
+}
+
+.tabla-rendimientos th {
+    background: #d4af37; /* Dorado */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tabla-rendimientos tbody tr:nth-child(even) {
+    background: #f9f9f9; /* Fondo alternado */
+}
+
+.tabla-rendimientos tbody tr:hover {
+    background: #fff4d3; /* Fondo dorado claro al hacer hover */
+    //cursor: pointer;
+    //transform: scale(1.02); /* Sutil efecto al acercarse */
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    .tabla-rendimientos th, .tabla-rendimientos td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .titulo-rendimiento {
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,88 @@
+/* Estilos para el modal */
+.modal-infante {
+    position: fixed;
+    top: 50%; /* Posición en el centro vertical */
+    left: 50%; /* Posición en el centro horizontal */
+    transform: translate(-50%, -50%) !important; /* Centrado dinámico en ambas direcciones */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    z-index: 9999; /* Aseguramos que el modal esté por encima de otros elementos */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro detrás del modal */
+    animation: fadeIn 0.5s ease-out forwards; /* Animación de entrada suave */
+
+    /* Ajuste para pantallas más pequeñas */
+    @media (max-width: 768px) {
+        width: 100%; /* Modal ocupa toda la pantalla en dispositivos móviles */
+        height: 100%;
+        transform: none; /* Sin transformación en móvil */
+    }
+}
+
+/* Animación de entrada suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8); /* El modal entra desde un tamaño pequeño */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1); /* El modal termina en su tamaño normal */
+    }
+}
+
+/* Ajustes para el contenido del modal */
+.modal-infante .modal-contenido {
+    background-color: white;
+    padding: 20px;
+    color: #d4af37; /* Color dorado */
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    animation: slideInContent 0.5s ease-out forwards; /* Animación de entrada suave para el contenido */
+}
+
+/* Animación de entrada suave para el contenido */
+@keyframes slideInContent {
+    from {
+        opacity: 0;
+        transform: translateY(-10%); /* El contenido entra desde arriba */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* El contenido se posiciona en su lugar */
+    }
+}
+
+// /* Estilos del botón de cerrar */
+// .cerrar {
+//     background: none;
+//     border: none;
+//     font-size: 20px;
+//     cursor: pointer;
+//     color: #d4af37; /* Color dorado */
+//     position: absolute;
+//     top: 10px;
+//     right: 10px;
+//     transition: color 0.3s, transform 0.3s ease-in-out; /* Transición suave */
+//     z-index: 1001;
+// }
+
+// /* Efecto al pasar el mouse sobre el botón de cerrar */
+// .cerrar:hover {
+//     color: darken(#d4af37, 10%);
+//     transform: scale(1.2); /* Efecto de agrandamiento */
+// }
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .modal-infante .modal-contenido {
+        padding: 15px; /* Menos padding en móviles */
+    }
+    .cerrar {
+        font-size: 18px; /* Tamaño de letra más pequeño en móvil */
+        top: 15px;
+        right: 15px;
+    }
+}

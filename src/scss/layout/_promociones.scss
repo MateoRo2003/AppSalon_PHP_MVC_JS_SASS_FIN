@@ -1,0 +1,202 @@
+/* Estilo de los botones de activación */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50; /* Color verde dorado para activo */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Contenedor de la opción */
+.opcion {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+    flex-wrap: wrap; /* Ajuste de contenido en pantallas pequeñas */
+}
+
+.explicacion {
+    flex: 1;
+    color: #333;
+    font-size: 16px;
+}
+
+// h3 {
+//     font-size: 18px;
+//     font-weight: bold;
+//     color: #333;
+// }
+
+// p {
+//     margin-top: 5px;
+// }
+
+.toggle-boton {
+    margin-left: 20px;
+    min-width: 60px; /* Para evitar que se desordene en pantallas pequeñas */
+}
+
+/* Estilo del botón Guardar Cambios */
+.guardar-cambios {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#guardarCambios {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Color verde dorado */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#guardarCambios[disabled] {
+    background-color: #ccc; /* Color gris cuando está deshabilitado */
+    cursor: not-allowed;
+}
+
+#guardarCambios:hover {
+    background-color: #45a049;
+}
+
+/* Estilo de la advertencia */
+.advertencia {
+    background-color: #f1f1f1; /* Color amarillo de advertencia */
+    color: #000; /* Texto negro */
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Estilo del botón Enviar Mensaje */
+.enviar-novedad {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#enviarMensaje {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Color verde dorado */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#enviarMensaje[disabled] {
+    background-color: #ccc; /* Color gris cuando está deshabilitado */
+    cursor: not-allowed;
+}
+
+#enviarMensaje:hover {
+    background-color: #45a049;
+}
+
+.novedades h2 {
+    margin-top: 5rem;
+}
+
+/* Media queries para hacer el diseño responsive */
+
+@media (max-width: 768px) {
+    /* En pantallas pequeñas, hacer los switches más pequeños */
+    .switch {
+        width: 50px;
+        height: 30px;
+    }
+
+    .slider:before {
+        width: 22px;
+        height: 22px;
+    }
+
+    .opcion {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .explicacion {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .toggle-boton {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    /* Hacer los botones más pequeños en pantallas pequeñas */
+    #guardarCambios, #enviarMensaje {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Para pantallas muy pequeñas (móviles en modo retrato) */
+    .opcion {
+        padding: 8px;
+    }
+
+    .explicacion {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .toggle-boton {
+        margin-top: 5px;
+    }
+
+    #guardarCambios, #enviarMensaje {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,99 @@
+/* Estilos de los filtros */
+.filtros {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Los filtros se acomoden en varias líneas si es necesario */
+    gap: 12px;
+    justify-content: center; /* Centra los filtros horizontalmente */
+}
+
+.filtro {
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #d4af37;
+    border-radius: 8px; /* Esquinas redondeadas */
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+}
+
+.filtro.activo {
+    background-color: #d4af37;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra en el filtro activo */
+}
+
+.filtro:hover {
+    background-color: #d4af37;
+    transform: scale(1.05); /* Efecto de ampliación en hover */
+}
+
+/* Estilos de la tabla */
+.clientes-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 12px; /* Bordes redondeados */
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra refinada */
+}
+
+.clientes-table th, .clientes-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.clientes-table th {
+    background-color: #d4af37; /* Azul brillante */
+    color: #fff; /* Texto blanco */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.clientes-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Fondo alternado */
+}
+
+.clientes-table tbody tr:hover {
+    background-color: #e3f2fd; /* Azul claro al hacer hover */
+   // cursor: pointer;
+   // transform: scale(1.02); /* Efecto de ampliación en hover */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .clientes-table th, .clientes-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .filtro {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .clientes-table {
+        display: block;
+        overflow-x: auto; /* Agrega desplazamiento horizontal si la tabla es demasiado ancha */
+    }
+
+    .clientes-table th, .clientes-table td {
+        font-size: 12px; /* Reduce aún más el tamaño del texto */
+        padding: 8px;
+    }
+
+    .filtros {
+        flex-direction: column; /* Los filtros se apilan verticalmente en pantallas pequeñas */
+        margin-bottom: 15px;
+        gap: 8px;
+    }
+
+    .filtro {
+        width: 100%; /* Los filtros ocupan el ancho completo */
+        text-align: center;
+    }
+}

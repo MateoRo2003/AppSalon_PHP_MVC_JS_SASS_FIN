@@ -1,0 +1,293 @@
+/* Estilos base del formulario */
+@use 'base/variables' as v;
+
+.formulario-crear {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 40px auto;
+    color: #000; /* Texto negro */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilo de los campos */
+.campo-crear {
+    margin-bottom: 30px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Estilo de las etiquetas */
+.campo-crear label {
+    font-size: 1.6rem;
+    color: #000; /* Texto negro */
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* Estilos para inputs y select */
+.campo-crear input,
+.campo-crear select {
+    width: 100%;
+    padding: 15px 18px;
+    background-color: #f9f9f9; /* Fondo gris claro */
+    border: 1px solid #000; /* Borde negro */
+    color: #000; /* Texto negro */
+    border-radius: 8px;
+    font-size: 1.6rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Estilo al enfocar los campos (input, select) */
+.campo-crear input:focus,
+.campo-crear select:focus {
+    background-color: #fff; /* Fondo blanco */
+    border-color: #000; /* Borde negro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra negra ligera */
+}
+
+/* Campos no editables */
+.campo-crear input[readonly],
+.campo-crear input[disabled] {
+    background-color: #e0e0e0; /* Fondo gris más claro */
+    cursor: not-allowed; /* Cambia el cursor a 'no permitido' */
+    pointer-events: none; /* Deshabilita la interacción del mouse */
+}
+
+/* Estilo del botón */
+.btn-ver-fechas {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block; /* Hace que el botón sea un bloque */
+    margin: 0 auto; /* Centra el botón */
+}
+
+/* Hover y efecto de clic */
+.btn-ver-fechas:hover {
+    background-color: #333; /* Negro más claro */
+}
+.btn-ver-fechas:active {
+    transform: scale(0.98);
+}
+
+/* Flexbox para alinear los elementos en una fila */
+.flex-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.campo-flex {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+    .formulario-crear {
+        padding: 20px;
+    }
+
+    .campo-crear label {
+        font-size: 1.4rem;
+    }
+
+    .campo-crear input,
+    .campo-crear select,
+    .btn-ver-fechas {
+        font-size: 1.4rem;
+        padding: 10px 15px;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .campo-flex {
+        margin-right: 0;
+    }
+}
+
+
+// /* Estilos para la combobox */
+// .custom-combobox {
+//     position: relative;
+//     width: 100%;
+//     font-size: 1.6rem;
+//     background-color: #ffffff;
+//     border: 1px solid #000;
+//     border-radius: 8px;
+//     cursor: pointer;
+//     color: #000;
+// }
+
+// .combobox-selected {
+//     padding: 10px 15px;
+//     background-color: #fff;
+//     color: #000;
+//     border-radius: 8px;
+// }
+
+// .combobox-selected::after {
+//     content: '▼';
+//     float: right;
+//     color: #000;
+//     font-size: 1rem;
+// }
+
+// .combobox-options {
+//     display: none;
+//     position: absolute;
+//     top: 100%;
+//     left: 0;
+//     width: 100%;
+//     background-color: #fff;
+//     border: 1px solid #000;
+//     border-radius: 8px;
+//     max-height: 200px;
+//     overflow-y: auto;
+//     z-index: 10;
+//     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+// }
+
+// .checkbox-option {
+//     display: flex;
+//     justify-content: space-between; /* Alinea el contenido a los extremos */
+//     align-items: center;
+//     padding: 10px;
+//     cursor: pointer;
+//     transition: background-color 0.3s;
+// }
+
+// .checkbox-option:hover {
+//     background-color: #f0f0f0;
+// }
+
+// .checkbox-option input {
+//     margin: 0; /* Elimina cualquier margen por defecto */
+//     margin-left: auto; /* Empuja el input hacia la derecha */
+// }
+
+
+// .combobox-options.active {
+//     display: block;
+// }
+
+// /* Campos no editables */
+// .campo-crear input[readonly],
+// .campo-crear input[disabled] {
+//     background-color: #e0e0e0; /* Fondo gris más claro */
+//     cursor: not-allowed; /* Cambia el cursor a 'no permitido' */
+//     pointer-events: none; /* Deshabilita la interacción del mouse */
+// }
+.custom-combobox {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    color: #000;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 18px;
+    max-width: 100%;
+
+    .combobox-selected {
+        padding: 15px;
+        font-size: 18px;
+        background: #fff;
+        border-radius: 8px;
+        transition: all 0.3s;
+        &:hover {
+            background: #f5f5f5;
+        }
+    }
+
+    .combobox-options {
+        display: none;
+        position: absolute;
+        width: 100%;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-top: none;
+        max-height: 250px;
+        overflow-y: auto;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        padding: 5px;
+
+        &.show {
+            display: block;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; // Asegura que los elementos se separen
+            padding: 15px;
+            font-size: 18px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+            gap: 10px; // Agrega separación entre el texto y el checkbox
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .servicio-nombre {
+                
+                color: #333;
+                flex-grow: 1; // Ocupa el espacio disponible antes del checkbox
+            }
+
+            input[type="checkbox"] {
+               
+                width: 16px;
+                height: 16px;
+                border: 2px solid #555; // Color del borde del checkbox
+                border-radius: 4px;
+                background: transparent; // Hace el fondo transparente
+                cursor: pointer;
+                position: relative;
+                display: inline-block;
+                transition: all 0.3s;
+            
+                &:hover {
+                    border-color: #000;
+                }
+            
+                &:checked {
+                    background-color: #2196F3; // Color de fondo cuando está seleccionado
+                    border-color: #2196F3;
+                }
+            
+                &:checked::after {
+                    content: '✔';
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: white;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            &:hover {
+                background: #f0f0f0;
+            }
+        }
+    }
+}
+
+
+

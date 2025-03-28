@@ -1,0 +1,195 @@
+.modal-agregar {
+    max-height: 100%;
+    max-width: 900px; /* Más ancho para pantallas grandes */
+    width: 100%;
+    height: auto;
+    display: none;
+    position: fixed;
+    z-index: 60;
+    left: 50%;
+    top: 50%;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    border-radius: 10px;
+    display: none;
+    justify-content: center; /* Centrar horizontalmente el modal */
+    align-items: center; /* Centrar verticalmente el modal */
+  }
+  
+  /* Responsividad para tablets */
+  @media (max-width: 1024px) {
+    .modal-agregar {
+      max-width: 700px;
+      width: 95%;
+    }
+  }
+  
+  // /* Responsividad para móviles */
+  // @media (max-width: 368px) {
+  //   .modal-agregar {
+  //     width: 100%;
+  //     height: 100%;
+  //     top: 0;
+  //     left: 0;
+  //     transform: none;
+  //     border-radius: 0;
+  //     box-shadow: none;
+  //     justify-content: flex-start; /* Alinea hacia arriba en móviles */
+  //     align-items: flex-start;
+  //   }
+  // }
+  
+  .cerrar-agregar {
+    color: #b08d57;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .titulo-modal {
+    margin: 0;
+    padding: 10px 0 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: #b08d57;
+    border-bottom: 2px solid #f3f3f3;
+  }
+  
+  .modal-contenido-agregar {
+    padding: 20px;
+    color: #b08d57;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espacio entre elementos */
+    width: 100%;
+    max-width: 850px;
+  }
+  
+  @media (max-width: 768px) {
+    .modal-contenido-agregar {
+      padding: 15px;
+      border: none;
+    }
+  }
+  
+  .contenido-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  }
+  
+  @media (max-width: 368px) {
+    .contenido-principal {
+      flex-direction: column; /* Cambia a columna en móviles */
+      gap: 1rem;
+    }
+  }
+  
+  .formulario {
+    flex: 2; /* Formularios más grandes */
+  }
+  
+  .vista-previa {
+    flex: 1; /* Vista previa proporcional */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #b08d57;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #fff;
+    height: 250px; /* Altura predeterminada */
+    width: 250px; /* Ancho predeterminado */
+  }
+  
+  @media (max-width: 368px) {
+    .vista-previa {
+      margin: 0 auto; /* Centrado horizontal */
+      margin-top: 1rem; /* Espacio superior */
+      height: 250px; /* Altura ajustada para móviles */
+      width: 250px; /* Ancho ajustado para móviles */
+    }
+  }
+  
+  .vista-previa img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    display: block; /* Garantiza que ocupe el espacio correctamente */
+    object-fit: cover; /* Mantiene la proporción de la imagen, cubriendo el contenedor */
+  }
+  
+  .campo-agregar {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .campo-agregar label {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #b08d57;
+  }
+  
+  .campo-agregar input[type="text"],
+  .campo-agregar textarea {
+    padding: 15px;
+    border: 2px solid #b08d57;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+  }
+  
+  .campo-agregar input[type="text"]:focus,
+  .campo-agregar textarea:focus {
+    border-color: #d4af37;
+    outline: none;
+  }
+  
+  .campo-agregar input[type="file"] {
+    display: none;
+  }
+  
+  .campo-agregar label[for="archivo"] {
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #b08d57;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .campo-agregar label[for="archivo"]:hover {
+    background-color: #d4af37;
+  }
+  
+  .acciones-agregar button {
+    background-color: #b08d57;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .acciones-agregar button:hover {
+    background-color: #d4af37;
+  }
+  
