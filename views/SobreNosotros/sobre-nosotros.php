@@ -205,14 +205,7 @@
     <h3>Si tienes alguna duda, envíanos un mensaje hoy!</h3>
     <div class="container">
         <div id="mapa-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d899.3925909557217!2d-54.57669140878716!3d-25.61918906782717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f6925a07adb41f%3A0x7b88eb8de084e358!2sBarber%C3%ADa%20Barber%20Club!5e0!3m2!1ses!2sar!4v1728337092028!5m2!1ses!2sar" 
-                width="600" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d491.6928816051214!2d-54.57647197011197!3d-25.62036655623425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f693a905446e9d%3A0x99ff9d4038ae73c7!2sBarber%20Brian!5e0!3m2!1ses!2sar!4v1745605110636!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <form class="formulario-contacto" method="POST" action="/contactar" onsubmit="mostrarPantallaCarga()">
             <input type="text" name="nombre" placeholder="Tu nombre" required>
