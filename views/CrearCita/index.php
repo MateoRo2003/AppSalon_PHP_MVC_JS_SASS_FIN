@@ -128,14 +128,16 @@ document.getElementById("crearCitaBtn").addEventListener("click", function(event
 
         try {
             data = JSON.parse(data); // Intentar convertir la respuesta en JSON
+           
         } catch (e) {
            
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: "Ocurrió un problema, por favor completa todos los campos requiridos."
+                       Swal.fire({
+                icon: 'success',
+                title: '¡Éxito!',
+                text: data.success
+            }).then(() => {
+                window.location.href = "/admin"; // Redirigir después de éxito
             });
-            return;
         }
 
         Swal.close();

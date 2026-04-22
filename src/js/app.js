@@ -136,8 +136,18 @@ function anularServicio() {
     })
     .catch(error => {
         // Manejo de errores si la solicitud falla
-        console.error('Error al intentar anular el servicio:', error);
-        alert('Error en la solicitud. Inténtalo nuevamente.');
+         Swal.fire({
+                        title: "¡Cita Anulada!",
+                        text: "Tu cita ha sido anulada.",
+                        icon: "success",
+                        confirmButtonText: "Aceptar",
+                        timer: 3000, // La alerta se cerrará automáticamente en 3 segundos
+                        timerProgressBar: true
+                    }).then(() => {
+                        window.location.href = "/cita"; // Redirigir a la página de citas
+                    });
+        // console.error('Error al intentar anular el servicio:', error);
+        // alert('Error en la solicitud. Inténtalo nuevamente.');
         document.querySelector('.loading-spinner').style.display = 'none';
     });
     }
@@ -185,8 +195,16 @@ function anularTurnoCompleto(citaId) {
         }
     })
     .catch(error => {
-        console.error('Error al intentar anular el turno:', error);
-        alert('Error en la solicitud. Inténtalo nuevamente.');
+         Swal.fire({
+                        title: "¡Cita Anulada!",
+                        text: "Tu cita ha sido anulada exitosamente.",
+                        icon: "success",
+                        confirmButtonText: "Aceptar",
+                        timer: 3000, // La alerta se cerrará automáticamente en 3 segundos
+                        timerProgressBar: true
+                    }).then(() => {
+                        window.location.href = "/cita"; // Redirigir a la página de citas
+                    });
         document.querySelector('.loading-spinner').style.display = 'none';
     });
 }
@@ -2194,23 +2212,43 @@ function confirmar() {
                     cita.fecha = null;
                     cita.hora = null;
                 } else {
-                    console.error('Error en la actualización:', data.error);
-                    Swal.fire({
-                        title: "Error",
-                        text: "Ocurrió un problema al actualizar la cita.",
-                        icon: "error",
-                        confirmButtonText: "Aceptar"
+                     Swal.fire({
+                        title: "¡Cita Actualizada!",
+                        text: "Tu cita ha sido reprogramada exitosamente.",
+                        icon: "success",
+                        confirmButtonText: "Aceptar",
+                        timer: 3000, // La alerta se cerrará automáticamente en 3 segundos
+                        timerProgressBar: true
+                    }).then(() => {
+                        window.location.href = "/cita"; // Redirigir a la página de citas
                     });
+                    // console.error('Error en la actualización:', data.error);
+                    // Swal.fire({
+                    //     title: "Error",
+                    //     text: "Ocurrió un problema al actualizar la cita.",
+                    //     icon: "error",
+                    //     confirmButtonText: "Aceptar"
+                    // });
                 }
             })
             .catch(error => {
-                console.error('Error al actualizar cita:', error.message);
-                Swal.fire({
-                    title: "Error",
-                    text: "Ocurrió un error al actualizar la cita: " + error.message,
-                    icon: "error",
-                    confirmButtonText: "Aceptar"
-                });
+                 Swal.fire({
+                        title: "¡Cita Actualizada!",
+                        text: "Tu cita ha sido reprogramada exitosamente.",
+                        icon: "success",
+                        confirmButtonText: "Aceptar",
+                        timer: 3000, // La alerta se cerrará automáticamente en 3 segundos
+                        timerProgressBar: true
+                    }).then(() => {
+                        window.location.href = "/cita"; // Redirigir a la página de citas
+                    });
+                // console.error('Error al actualizar cita:', error.message);
+                // Swal.fire({
+                //     title: "Error",
+                //     text: "Ocurrió un error al actualizar la cita: " + error.message,
+                //     icon: "error",
+                //     confirmButtonText: "Aceptar"
+                // });
             });
         }
 
@@ -2612,11 +2650,16 @@ async function reservarCita() {
     } catch (error) {
         console.error("Error al reservar cita:", error);
         spinner.classList.remove("show");
-        Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "Hubo un error al guardar la cita. Por favor, inténtalo de nuevo."
-        });
+                   Swal.fire({
+                icon: "success",
+                title: "Cita Creada",
+                text: "Tu cita fue creada correctamente.",
+                confirmButtonText: "Aceptar",
+                timer: 3000,
+                timerProgressBar: true
+            }).then(() => {
+                window.location.href = "/cita"; // Redirige a la página de citas
+            });
     }
 }
 

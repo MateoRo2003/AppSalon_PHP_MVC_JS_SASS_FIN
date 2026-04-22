@@ -74,7 +74,7 @@ class Email{
         $mail->CharSet = 'UTF-8';
         
         // Establecer el remitente y el destinatario
-        $mail->setFrom('bucicardi05@gmail.com', 'Barberia');
+        $mail->setFrom($_ENV['EMAIL_USER'], 'Barberia');
         $mail->addAddress($this->email);
         $mail->Subject = 'Restablecer Contraseña';
         
